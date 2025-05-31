@@ -1,0 +1,8 @@
+build/
+boot2.flag
+*.elf
+*.npdm
+*.nso
+*.nsp
+.vscode/*
+!.vscode/c_cpp_properties.json

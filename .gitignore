@@ -4,5 +4,7 @@ boot2.flag
 *.npdm
 *.nso
 *.nsp
+*.nro
+*.nacp
 .vscode/*
 !.vscode/c_cpp_properties.json

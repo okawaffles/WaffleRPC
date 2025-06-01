@@ -106,7 +106,7 @@ void __appInit(void)
 
         .sb_efficiency = 8,
 
-        .num_bsd_sessions = 2,
+        .num_bsd_sessions = 3,
         .bsd_service_type = BsdServiceType_User,
     };
 
@@ -217,7 +217,7 @@ int main(int argc, char* argv[])
 
         }
 
-        if (socket_rc < 0)
+        if (socket_rc != 0)
         {
             // if there is an error we can
             // reinitialize the server to

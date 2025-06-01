@@ -77,5 +77,4 @@ void closePresenceServer(void)
 {
     close(connection);
     close(socket_fd);
-    socketExit();
 }

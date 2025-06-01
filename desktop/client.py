@@ -1,5 +1,6 @@
 import socket
 import time
+import pypresence
 
 SERVER_IP = "192.168.1.202"
 PORT = 0xCAFE

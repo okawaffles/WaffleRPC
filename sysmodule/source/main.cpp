@@ -9,6 +9,7 @@
 
 #define INNER_HEAP_SIZE 0x80000
 #define CURRENT_VERSION ""
+#define __PRESENCECLIENT_COMPATIBILITY
 
 #ifdef __cplusplus
 extern "C" {

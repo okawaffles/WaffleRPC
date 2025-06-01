@@ -1,0 +1,2 @@
+- can reconnect after disconnect but won't receive packets
+- gui cannot stop/start yet idk how pmshell works

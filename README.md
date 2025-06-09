@@ -6,6 +6,11 @@ Sysmodule ID: `0x010000000000CAFE`
 
 ## Building
 Clone repo, install devkitPro and switch development libraries, run `make` in the directory you wish to compile (sysmodule/GUI). I highly recommend using vscode and the included `c_cpp_properties.json` as it will allow Intellisense with devkitPro libraries. You may need to change the path/update the version number.
+### Sysmodule Requirements:
+- switch-dev
+### GUI Requirements:
+- switch-dev
+- switch-portlibs
 
 ## TODO
 I would like to get a function which can toggle the sysmodule without rebooting the system. This won't gracefully shut down the sysmodule but it would be a nice touch.

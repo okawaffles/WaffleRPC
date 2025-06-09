@@ -1,12 +1,10 @@
-#pragma once
-#include <switch.h>
+#include "processmanager.h"
 
 u64 wrpc_sysmodule_id = 0x010000000000CAFE;
 
-namespace ProcessManager
+namespace ProcessManager 
 {
 
-// check if the sysmodule is currently running
 Result checkSysmoduleRunning(bool *running)
 {
     u64 process_id = 0x0;
@@ -22,7 +20,6 @@ Result checkSysmoduleRunning(bool *running)
     return 0;
 }
 
-
 Result toggleSysmoduleProcess(bool *isCurrentlyRunning)
 {
     if (*isCurrentlyRunning)
@@ -36,5 +33,5 @@ Result toggleSysmoduleProcess(bool *isCurrentlyRunning)
 
     return 0;
 }
-
+    
 }

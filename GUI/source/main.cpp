@@ -6,8 +6,9 @@
 #include <fstream>
 #include <cstring>
 
-#include "bootmanager.hpp"
-#include "processmanager.hpp"
+#include "processmanager.h"
+#include "bootmanager.h"
+#include "titles.h"
 
 int main(int argc, char* argv[])
 {
@@ -48,9 +49,10 @@ int main(int argc, char* argv[])
     }
        
     printf("Your console must be restarted in order to enable/disable the sysmodule.\nThis behavior may be changed in a later update.\n");
-    printf("Press + to exit.\nPress - to reboot to payload.\nPress X to toggle module start on boot.\n \n");
+    printf("Press + to exit.\nPress - to reboot to payload.\nPress X to toggle module start on boot.\nPress Y to dump all icons.\n \n");
 
     consoleUpdate(NULL);
+    nsInitialize();
 
     while (appletMainLoop())
     {
@@ -67,27 +69,11 @@ int main(int argc, char* argv[])
             bpcRebootSystem();
         }
 
-        // toggle sysmodule immediately
-        // this code doesn't work
-        // if (keys_down & HidNpadButton_Y)
-        // {
-        //     Result rc;
-        //     if (running) rc = pmshellTerminateProgram(wrpc_sysmodule_id);
-        //     else rc = pmshellLaunchProgram(0, NULL, &wrpc_sysmodule_id);
-
-        //     if (R_SUCCEEDED(rc))
-        //     {
-        //         if (running) printf("Stopped WaffleRPC!\n");
-        //         else printf("Started WaffleRPC!\n");
-
-        //         running = !running;
-        //     }
-        //     else
-        //     {
-        //         if (running) printf("Failed to stop WaffleRPC!\n");
-        //         else printf("Failed to start WaffleRPC!\n");
-        //     }
-        // }
+        // dump game icon test
+        if (keys_down & HidNpadButton_Y)
+        {
+            Titles::dumpAllGameIcons();
+        }
 
         // toggling sysmodule on boot
         if (keys_down & HidNpadButton_X)
@@ -111,6 +97,7 @@ int main(int argc, char* argv[])
         consoleUpdate(NULL);
     }
 
+    nsExit();
     pmdmntExit();
     consoleExit(NULL);
     return 0;

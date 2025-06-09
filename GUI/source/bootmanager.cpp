@@ -1,14 +1,8 @@
-#pragma once
-#include <switch.h>
-#include <dirent.h>
-#include <cstring>
-#include <fstream>
+#include "bootmanager.h"
 
 namespace BootManager
 {
-    
-// check if boot2.flag exists for the
-// sysmodule, indicating start on boot
+
 Result checkBoot2Flag(bool *start)
 {
     DIR* dir;
